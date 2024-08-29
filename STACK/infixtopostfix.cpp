@@ -38,6 +38,7 @@ string infixtoPostfix(string s){
             if(!st.empty()){
                 st.pop();
             }
+            // st.pop();
         }
         else{
             while(!st.empty() && prec(st.top())>prec(s[i])){

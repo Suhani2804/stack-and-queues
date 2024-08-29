@@ -51,9 +51,11 @@ string infixtoPrefix(string s){
         }
     }
 
-    while(!st.empty()){
-    res+=st.top();
-    st.pop();}
+    while(!st.empty())
+    {
+        res+=st.top();
+        st.pop();
+    }
 
     reverse(res.begin(),res.end());
     return res;

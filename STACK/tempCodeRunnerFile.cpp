@@ -1,8 +1,7 @@
-q2.push(value);
-        N++;
-         while (!q1.empty())
-        {
-            q2.push(q1.front());
-            q1.pop();
-
-        }
+class Node {
+public:
+    int val;  // Value stored in the node
+    Node* next;  // Pointer to the next node in the list
+    // Constructor to create a new node with a value
+    Node(int x) : val(x), next(nullptr) {}
+};

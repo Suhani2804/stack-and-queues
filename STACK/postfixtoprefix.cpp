@@ -21,7 +21,6 @@ string postfixtoprefix(string s)
         }
         i++;
     }
-
     return st.top(); // The final result will be the only element left in the stack
 }
 
@@ -30,3 +29,4 @@ int main()
     string s="ab+c*";
     cout<<postfixtoprefix(s);
 }
+

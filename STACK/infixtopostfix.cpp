@@ -4,7 +4,6 @@
 using namespace std;
 
 int prec(char c){
-
     if(c=='^'){
         return 3;
     }
@@ -22,7 +21,6 @@ int prec(char c){
 string infixtoPostfix(string s){
     stack<char> st;
     string res;
-
     for(int i=0;i<s.length();i++){
         if((s[i]>='a' && s[i]<='z') || (s[i]>='A' && s[i]<='Z')){
             res+=s[i];
@@ -49,15 +47,16 @@ string infixtoPostfix(string s){
         }
     }
 
-while(!st.empty()){
-    res+=st.top();
-    st.pop();
-}
+    while(!st.empty())
+    {
+        res+=st.top();
+        st.pop();
+    }
 
-return res;
+    return res;
 }
 
 int main(){
-    cout<<infixtoPostfix("(a-b/c)*(a/k-l)");
+    cout<<infixtoPostfix("a-b/c*a/k-l");
     return 0;
 }

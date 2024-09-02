@@ -8,7 +8,7 @@ string prefixtoinfix(string s)
     stack<string> st;
     while (i >=0)
     {
-        if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')) {
+        if (isalnum(s[i])) {
             st.push(string(1, s[i])); // Convert char to string before pushing
         }
         else {

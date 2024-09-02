@@ -6,7 +6,6 @@ using namespace std;
 // logic is to reverse given string and then use postfix logic and then reverse ans again
 
 int prec(char c){
-
     if(c=='^'){
         return 3;
     }
@@ -23,11 +22,11 @@ int prec(char c){
 
 string infixtoPrefix(string s){
     reverse(s.begin(),s.end());
+    cout<<s<<endl;
     stack<char> st;
     string res;
-
     for(int i=0;i<s.length();i++){
-        if((s[i]>='a' && s[i]<='z') || (s[i]>='A' && s[i]<='Z')){
+        if((isalnum(s[i]))){
             res+=s[i];
         }
         else if(s[i]==')'){

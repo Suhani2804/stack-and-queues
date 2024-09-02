@@ -22,7 +22,7 @@ string infixtoPostfix(string s){
     stack<char> st;
     string res;
     for(int i=0;i<s.length();i++){
-        if((s[i]>='a' && s[i]<='z') || (s[i]>='A' && s[i]<='Z')){
+        if(isalnum(s[i])){
             res+=s[i];
         }
         else if(s[i]=='('){
@@ -39,7 +39,7 @@ string infixtoPostfix(string s){
             // st.pop();
         }
         else{
-            while(!st.empty() && prec(st.top())>prec(s[i])){
+            while(!st.empty() && prec(st.top())>=prec(s[i])){
                 res+=st.top();
                 st.pop();
             }
@@ -57,6 +57,6 @@ string infixtoPostfix(string s){
 }
 
 int main(){
-    cout<<infixtoPostfix("a-b/c*a/k-l");
+    cout<<infixtoPostfix("2+3*(8-5)/3+7-(2*3)+8");
     return 0;
 }
